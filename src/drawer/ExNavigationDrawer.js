@@ -181,7 +181,7 @@ class ExNavigationDrawer extends PureComponent<any, Props, State> {
     const isSelected = drawerItem.id === selectedChild.key;
     
     if (this.props.renderSelectedOnly && !isSelected) {
-      return null;
+      return <View key={drawerItem.id} />;
     }
     
     return (
