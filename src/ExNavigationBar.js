@@ -13,18 +13,9 @@ import PropTypes from 'prop-types';
 import PureComponent from './utils/PureComponent';
 import { unsupportedNativeView } from './ExUnsupportedNativeView';
 import { withNavigation } from './ExNavigationComponents';
+import { BlurView } from 'expo-blur';
 
 import isIPhoneX from './utils/isIPhoneX';
-
-let BlurView;
-let expoModule = global.__exponent || global.__expo;
-if (expoModule) {
-  BlurView = expoModule.BlurView
-    ? expoModule.BlurView
-    : expoModule.Components.BlurView;
-} else {
-  BlurView = unsupportedNativeView('BlurView');
-}
 
 // Exponent draws under the status bar on Android, but vanilla React Native does not.
 // So we need to factor the status bar height in with Exponent but can ignore it with

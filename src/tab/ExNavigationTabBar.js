@@ -9,16 +9,7 @@ import {
 } from 'react-native';
 
 import { unsupportedNativeView } from '../ExUnsupportedNativeView';
-
-let BlurView;
-let expoModule = global.__exponent || global.__expo;
-if (expoModule) {
-  BlurView = expoModule.BlurView
-    ? expoModule.BlurView
-    : expoModule.Components.BlurView;
-} else {
-  BlurView = unsupportedNativeView('BlurView');
-}
+import { BlurView } from 'expo-blur';
 
 import TabBadge from '../ExNavigationBadge';
 
